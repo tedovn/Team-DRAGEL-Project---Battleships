@@ -160,7 +160,33 @@ function computerMove() {
         }
       }
     }
-// TODO
+  if ( !selected ) {
+    /* Nothing found in 'shoot to kill' mode, so we're just taking
+       potshots. Random shots are in a chequerboard pattern for
+       maximum efficiency, and never twice in the same place */
+    do {
+      sy = Math.floor(Math.random() * gridy);
+      sx = Math.floor(Math.random() * gridx/2)*2+sy%2;
+    } while( player[sy][sx][0]>100 );
+    }
+  if (player[sy][sx][0] < 100) {
+    /* Hit something */
+    setImage(sy,sx,103,false);
+    var shipno = player[sy][sx][1];
+    if ( --playersships[shipno][1] == 0 ) {
+      sinkShip(player,shipno,false);
+      alert("I sank your "+shiptypes[playersships[shipno][0]][0]+"!");
+      if ( --playerlives == 0 ) {
+        knowYourEnemy();
+        alert("I win! Press the Refresh button on\n"+
+        "your browser to play another game.");
+        playflag = false;
+      }
+    }
+  } else {
+    /* Missed */
+    setImage(sy,sx,102,false);
+  }
 }
 
 /* When whole ship is hit, show it using changed graphics
