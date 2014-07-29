@@ -1,13 +1,12 @@
-body{
+body {
     background-image:url(../img/battleships.jpg);
     background-repeat:no-repeat;
-    background-size:100%;
 }
-table{
+#game-field {
     margin:30px;
     border:20px solid #A6D8DF;
     border-radius:20px;
-    opacity:0.8;
+    opacity:0.9;
 }
 .intro { 
     font-size:10pt;
@@ -31,6 +30,10 @@ tbody{
     background-color:white;
     padding:30px;
 }
-a{
-    border:2px solid white;
+
+a img {
+	margin: 0;
+	width: 22px;
+	height: 22px;
+	margin-bottom: -5px;
 }
