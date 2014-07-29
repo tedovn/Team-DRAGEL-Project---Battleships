@@ -127,3 +127,17 @@ function computerMove() {
   var x,y,pass;
   var sx,sy;
   var selected = false;
+}
+
+/* When whole ship is hit, show it using changed graphics
+*/
+function sinkShip(grid,shipno,ispc) {
+  var y,x;
+  for (y=0;y<gridx;++y) {
+    for (x=0;x<gridx;++x) {
+      if ( grid[y][x][1] == shipno )
+      if (ispc) setImage(y,x,computer[y][x][2],true);
+      else setImage(y,x,player[y][x][2],false);
+    }
+  }
+}
