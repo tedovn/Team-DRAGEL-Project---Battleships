@@ -121,3 +121,9 @@ function gridClick(y,x) {
     }
   }
 }
+
+/* Function to make the computers move. Note that the computer does not cheat, oh no! */
+function computerMove() {
+  var x,y,pass;
+  var sx,sy;
+  var selected = false;
