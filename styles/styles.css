@@ -1,0 +1,36 @@
+body{
+    background-image:url(../img/battleships.jpg);
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+table{
+    margin:30px;
+    border:20px solid #A6D8DF;
+    border-radius:20px;
+    opacity:0.8;
+}
+.intro { 
+    font-size:10pt;
+    font-style:italic
+}
+.heading { 
+    font-size:14pt; 
+    font-weight:bold; 
+    font-family:sans-serif;
+    color:navy 
+}
+.title {
+    font-size:18pt; 
+    font-weight:bold; 
+    background-color:navy; 
+    color:white; 
+    text-align:center; 
+    font-family:sans-serif 
+}
+tbody{
+    background-color:white;
+    padding:30px;
+}
+a{
+    border:2px solid white;
+}
