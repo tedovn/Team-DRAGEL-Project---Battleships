@@ -84,6 +84,17 @@ function setupPlayer(ispc) {
 return grid;
 }
 
+/* Function to change an image shown on a grid */
+function setImage(y,x,id,ispc) {
+  if ( ispc ) {
+    computer[y][x][0] = id;
+    document.images["pc"+y+"_"+x].src = "img/batt"+id+".gif";
+  } else {
+    player[y][x][0] = id;
+    document.images["ply"+y+"_"+x].src = "img/batt"+id+".gif";
+  }
+}
+
 /* Function to insert HTML source for a grid */
 function showGrid(ispc) {
   var y,x;
