@@ -1,6 +1,6 @@
 body {
-    background-image:url(../img/battleships.jpg);
-    background-repeat:no-repeat;
+    background: url(../img/battleships.jpg) no-repeat;
+    background-size: 100%;
 }
 #game-field {
     margin:30px;
