@@ -83,3 +83,17 @@ function setupPlayer(ispc) {
   }
 return grid;
 }
+
+/* Function to insert HTML source for a grid */
+function showGrid(ispc) {
+  var y,x;
+  for (y=0;y<gridy;++y) {
+    for (x=0;x<gridx;++x) {
+      if ( ispc )
+      document.write ('<a href="javascript:gridClick('+y+','+x+');"><img name="pc'+y+'_'+x+'" src="img/batt100.gif" width=16 height=16></a>');
+      else
+      document.write ('<a href="javascript:void(0);"><img name="ply'+y+'_'+x+'" src="img/batt'+player[y][x][0]+'.gif" width=16 height=16></a>');
+    }
+    document.write('<br>');
+  }
+}
