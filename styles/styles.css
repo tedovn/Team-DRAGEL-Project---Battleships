@@ -2,6 +2,12 @@ body {
     background: url(../img/battleships.jpg) no-repeat;
     background-size: 100%;
 }
+body > p{
+    text-align: center;
+    font-size: 30pt;
+    color: rgb(240, 255, 97);
+    font-family: Old English Text MT;
+}
 .battleships {
     margin: 0 auto;
     border: 20px solid #A6D8DF;
