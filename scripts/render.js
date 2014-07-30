@@ -1,29 +1,3 @@
-/* Preloading all images needed */
-function imagePreload() {
-    'use strict';
-
-    var i, ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 101, 102, 103, 201, 202, 203, 204, 205, 206];
-
-    for (i = 0; i < ids.length; ++i) {
-        var img = new Image, name = "img/batt" + ids[i] + ".gif";
-        img.src = name;
-        preloaded[i] = img;
-    }
-}
-
-/* Function to change an image shown on a grid */
-function setupImages(y, x, id, ispc) {
-    'use strict';
-
-    if (ispc) {
-        computer[y][x][0] = id;
-        document.images["pc" + y + "_" + x].src = "img/batt" + id + ".gif";
-    } else {
-        player[y][x][0] = id;
-        document.images["ply" + y + "_" + x].src = "img/batt" + id + ".gif";
-    }
-}
-
 /* Function to place the ships in the grid */
 function setupPlayer(ispc) {
     'use strict';
@@ -86,6 +60,32 @@ function setupPlayer(ispc) {
     }
 
     return grid;
+}
+
+/* Preloading all images needed */
+function imagePreload() {
+    'use strict';
+
+    var i, ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 101, 102, 103, 201, 202, 203, 204, 205, 206];
+
+    for (i = 0; i < ids.length; ++i) {
+        var img = new Image, name = "img/batt" + ids[i] + ".gif";
+        img.src = name;
+        preloaded[i] = img;
+    }
+}
+
+/* Function to change an image shown on a grid */
+function setupImages(y, x, id, ispc) {
+    'use strict';
+
+    if (ispc) {
+        computer[y][x][0] = id;
+        document.images["pc" + y + "_" + x].src = "img/batt" + id + ".gif";
+    } else {
+        player[y][x][0] = id;
+        document.images["ply" + y + "_" + x].src = "img/batt" + id + ".gif";
+    }
 }
 
 /* Render game field */
