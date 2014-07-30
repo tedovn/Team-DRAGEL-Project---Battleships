@@ -2,38 +2,26 @@ body {
     background: url(../img/battleships.jpg) no-repeat;
     background-size: 100%;
 }
-#game-field {
-    margin:30px;
-    border:20px solid #A6D8DF;
-    border-radius:20px;
-    opacity:0.9;
+.battleships {
+    margin: 0 auto;
+    border: 20px solid #A6D8DF;
+    border-radius: 15px;
+    opacity: 0.9;
 }
-.intro { 
-    font-size:10pt;
-    font-style:italic
+.battleships tbody {
+    background-color: white;
+    padding: 30px;
 }
-.heading { 
-    font-size:14pt; 
-    font-weight:bold; 
-    font-family:sans-serif;
-    color:navy 
+.battleships tr:first-child td {
+    font-size: 18pt;
+    font-weight: bold;
+    color: white;
+    background-color: navy;
+    text-align: center;
+    padding: 10px;
 }
-.title {
-    font-size:18pt; 
-    font-weight:bold; 
-    background-color:navy; 
-    color:white; 
-    text-align:center; 
-    font-family:sans-serif 
-}
-tbody{
-    background-color:white;
-    padding:30px;
-}
-
-a img {
-	margin: 0;
-	width: 22px;
-	height: 22px;
-	margin-bottom: -5px;
+.battleships a img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: -5px;
 }
