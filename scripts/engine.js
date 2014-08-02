@@ -33,7 +33,9 @@ function knowYourEnemy() {
 /* Show how many ships computer has left */
 function updateStatus() {
     var f = false, i, s = "Computer has ";
-
+	/*var output = document.getElementById("output");
+	var outRow = document.createElement("p");*/
+	
     for (i = 0; i < computersships.length; ++i) {
         if (computersships[i][1] > 0) {
             f ? s = s + ", " : f = true;
@@ -45,10 +47,16 @@ function updateStatus() {
     }
 
     statusmsg = s;
+	/*outRow.innerHTML = statusmsg;
+	output.appendChild(outRow);*/
     window.status = statusmsg;
 }
 
 function setStatus() {
+	/*var output = document.getElementById("output");
+	var outRow = document.createElement("p");
+	outRow.innerHTML = statusmsg;
+	output.appendChild(outRow);*/
     window.status = statusmsg;
 }
 
@@ -74,7 +82,8 @@ function setStatus() {
         showGrid(true, playerField);
         showGrid(false, enemyField);
 
-        document.body.appendChild(table);
+		var main = document.getElementById("main");
+        main.appendChild(table);
 
         updateStatus();
         setInterval("setStatus();", 1000);

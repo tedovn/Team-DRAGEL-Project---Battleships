@@ -6,8 +6,46 @@
     <link href="styles/styles.css" rel="stylesheet">
 </head>
 <body>
-<p>TEAM "DRAGEL"</p>
+	<header>
+		<a class="logo" href="/">
+			<img class="logo" alt="Battleships" src="img/BattleshipLogo.png">
+		</a>
+	</header>
+	<div id="main">
+	</div>
+	<div id="main-info">
+		<h1>Info</h1>
+		<div id="cMain">
+			<h3>Computer's fleet</h3>
+			<p>Battleship: <span id="cBattleship" class="compship normal">1</span></p>
+			<p>Cruiser: <span id="cCruiser" class="compship normal">2</span></p>
+			<p>Frigate: <span id="cFrigate" class="compship normal">4</span></p>
+			<p>Minesweeper: <span id="cMinesweeper" class="compship normal">4</span></p>
+		</div>
+		<div id="pMain">
+			<h3>Player's fleet</h3>
+			<p>Battleship: <span id="pBattleship" class="playship normal">1</span></p>
+			<p>Cruiser: <span id="pCruiser" class="playship normal">2</span></p>
+			<p>Frigate: <span id="pFrigate" class="playship normal">4</span></p>
+			<p>Minesweeper: <span id="pMinesweeper" class="playship normal">4</span></p>
+		</div>
+		<div id="info">		
+			<h1>Battle info</h1>
+			<div id="output">
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>
+			<span>TEAM "DRAGEL"'s Battleships Game - SoftUni Project, 2014</span>
+			<a href="docs/Battleships%20-%20Documentation.docx" download="Battleships-Game-Documentation">
+				<span>Battleships-Game-Documentation</span>
+			</a>
+			<a href="docs/Team%20DRAGEL%20-%20Presentation.docx" download="Team-DRAGEL-Presentation">
+				<span>Team DRAGEL - Presentation</span>
+			</a>
+		</p>
+	</footer>
 <script data-main="scripts/engine" src="scripts/libs/require.js"></script>
-
 </body>
 </html>

@@ -3,7 +3,12 @@ function computerMove() {
     var x, y, pass;
     var sx, sy;
     var selected = false;
-
+	var output = document.getElementById("output");
+	output.scrollTop = output.scrollHeight;
+	var outRow = document.createElement("p");
+	outRow.className = "bad";
+    var shipInfos = document.getElementsByClassName("playship");
+	var currentValue;
     /* Make two passes during 'shoot to kill' mode */
     for (pass = 0; pass < 2; ++pass) {
         for (y = 0; y < gridy && !selected; ++y) {
@@ -81,12 +86,53 @@ function computerMove() {
         var shipno = player[sy][sx][1];
         if (--playersships[shipno][1] == 0) {
             sinkShip(player, shipno, false);
-            alert("I sank your " + shiptypes[playersships[shipno][0]][0] + "!");
+			if(shiptypes[playersships[shipno][0]][0] === "Battleship") {
+			   currentValue = parseInt(shipInfos[0].innerHTML);
+			   currentValue -= 1;
+			   shipInfos[0].innerHTML = currentValue;
+			   if(currentValue === 0) {
+					shipInfos[0].className = "playship sunk";
+				} else {
+				    shipInfos[0].className = "playship attacked";
+				}
+			} else if(shiptypes[playersships[shipno][0]][0] === "Cruiser") {
+			   currentValue = parseInt(shipInfos[1].innerHTML);
+			   currentValue -= 1;
+			   shipInfos[1].innerHTML = currentValue;
+			   if(currentValue === 0) {
+					shipInfos[1].className = "playship sunk";
+				} else {
+				    shipInfos[1].className = "playship attacked";
+				}
+			} else if(shiptypes[playersships[shipno][0]][0] === "Frigate") {
+			   currentValue = parseInt(shipInfos[2].innerHTML);
+			   currentValue -= 1;
+			   shipInfos[2].innerHTML = currentValue;
+			   if(currentValue === 0) {
+					shipInfos[2].className = "playship sunk";
+				} else {
+				    shipInfos[2].className = "playship attacked";
+				}
+			} else {
+			   currentValue = parseInt(shipInfos[3].innerHTML);
+			   currentValue -= 1;
+			   shipInfos[3].innerHTML = currentValue;
+			   if(currentValue === 0) {
+					shipInfos[3].className = "playship sunk";
+				} else {
+				    shipInfos[3].className = "playship attacked";
+				}
+			}	
+			outRow.innerHTML = "Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!";
+			output.appendChild(outRow);
+            /*alert("Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!");*/
             if (--playerlives == 0) {
                 knowYourEnemy();
-
-                alert("I win! Press the Refresh button on\n" +
-                    "your browser to play another game.");
+				outRow.className = "very-bad";
+				outRow.innerHTML = "Computer win! Press the Refresh button on your browser to play another game.";
+				output.appendChild(outRow);
+                /*alert("Computer win! Press the Refresh button on\n" +
+                    "your browser to play another game.");*/
                 playflag = false;
             }
         }

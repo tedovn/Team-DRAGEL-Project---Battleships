@@ -1,16 +1,23 @@
 body {
-    background: url(../img/battleships.jpg) no-repeat;
-    background-size: 100%;
+    background: url("../img/battleships.jpg") no-repeat scroll 0 0 / cover  rgba(0, 0, 0, 0);
 }
-body > p{
+body {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+/*body > p{
     text-align: center;
     font-size: 30pt;
     color: rgb(240, 255, 97);
     font-family: Old English Text MT;
-}
+}*/
 .battleships {
-    margin: 0 auto;
-    border: 20px solid #A6D8DF;
+    margin: 0;
+    border: 5px solid #A6D8DF;
     border-radius: 15px;
     opacity: 0.9;
 }
@@ -30,4 +37,107 @@ body > p{
     width: 28px;
     height: 28px;
     margin-bottom: -5px;
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+}
+h1 {
+    text-align: center;
+}
+h1 ,
+h3 {
+	background: #68adac;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px;
+}
+#main {
+	float: left;
+	margin-left: 10px;
+    margin-top: 10px;
+}
+#main-info {
+	float: right; 
+	width: 390px; 
+	background: #439573;
+	margin-right: 10px;
+    margin-top: 10px;
+}
+#cMain p,
+#pMain p { 
+	font-size: 18px;
+}
+#cMain {
+	float: left;
+	width: 185px;
+	background: #dedede;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+}
+#pMain {
+	float: right; 
+	width: 165px;
+	background: #dedede;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	clear: right;
+}
+#info {
+	float: left; 
+	background: #dedede;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	width: 370px;
+}
+#output {
+	margin:5px;
+	padding:2px;
+	background: #95a4ab;
+	height: 127px;
+	overflow-y: scroll;
+}
+footer {
+	background: #327a9b;
+	float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+span {
+    margin-left: 20px;
+}
+.normal {
+	color: green; 
+	float: right;
+}
+.sunk { 
+	color: red; 
+	float: right;
+}
+.attacked { 
+	color: blue; 
+	float: right;
+}
+#output p {
+    border-bottom: 1px dashed #255e79;
+    display: block;
+    margin: 2px 0;
+}
+.cool {
+	color: green;
+}
+.bad {
+	color: red;
+}
+.very-cool {
+	color: blue;
+	font-size: 18px;
+}
+.very-bad {
+	color: #a40202;
+	font-size: 18px;
 }
