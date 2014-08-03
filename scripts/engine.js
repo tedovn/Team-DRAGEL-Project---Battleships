@@ -64,7 +64,7 @@ function setStatus() {
 (function () {
     require(['constants', 'render', 'interactions', 'ai', 'sound'], function () {
         imagePreload();
-        //backgroundMusic.play(); // background music
+        backgroundMusic.play();
 
         player = setupPlayer(false);
         computer = setupPlayer(true);
