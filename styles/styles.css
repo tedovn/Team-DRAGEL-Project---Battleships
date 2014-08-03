@@ -17,7 +17,7 @@ a {
 }*/
 .battleships {
     margin: 0;
-    border: 5px solid #A6D8DF;
+    border: 5px solid #439573;
     border-radius: 15px;
     opacity: 0.9;
 }
@@ -29,7 +29,7 @@ a {
     font-size: 18pt;
     font-weight: bold;
     color: white;
-    background-color: navy;
+    background-color: #002d4c;
     text-align: center;
     padding: 10px;
 }
@@ -48,7 +48,7 @@ h1 {
 }
 h1 ,
 h3 {
-	background: #68adac;
+	background: #002d4c; /*#68adac;*/
 	border-radius: 10px;
 	padding: 5px;
 	margin: 5px;
@@ -64,6 +64,7 @@ h3 {
 	background: #439573;
 	margin-right: 10px;
     margin-top: 10px;
+	border-radius: 10px;
 }
 #cMain p,
 #pMain p { 

@@ -4,7 +4,6 @@ function computerMove() {
     var sx, sy;
     var selected = false;
 	var output = document.getElementById("output");
-	output.scrollTop = output.scrollHeight;
 	var outRow = document.createElement("p");
 	outRow.className = "bad";
     var shipInfos = document.getElementsByClassName("playship");
@@ -125,12 +124,14 @@ function computerMove() {
 			}	
 			outRow.innerHTML = "Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!";
 			output.appendChild(outRow);
+			output.scrollTop = output.scrollHeight;
             /*alert("Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!");*/
             if (--playerlives == 0) {
                 knowYourEnemy();
 				outRow.className = "very-bad";
 				outRow.innerHTML = "Computer win! Press the Refresh button on your browser to play another game.";
 				output.appendChild(outRow);
+				output.scrollTop = output.scrollHeight;
                 /*alert("Computer win! Press the Refresh button on\n" +
                     "your browser to play another game.");*/
                 playflag = false;

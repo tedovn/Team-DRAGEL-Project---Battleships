@@ -1,7 +1,6 @@
 /* Handler for clicking on the grid */
 function gridClick(y, x) {
 	var output = document.getElementById("output");
-	output.scrollTop = output.scrollHeight;
 	var outRow = document.createElement("p");
 	outRow.className = "cool";
 	var shipInfos = document.getElementsByClassName("compship");
@@ -52,6 +51,7 @@ function gridClick(y, x) {
 				}				
 				outRow.innerHTML = "You sank computer's " + shiptypes[computersships[shipno][0]][0] + "!";
 				output.appendChild(outRow);
+				output.scrollTop = output.scrollHeight;
                 /*alert("You sank computer's " + shiptypes[computersships[shipno][0]][0] + "!");*/
                 updateStatus();
 
@@ -59,6 +59,7 @@ function gridClick(y, x) {
 				    outRow.className = "very-cool";
 					outRow.innerHTML = "You win! Press the Refresh button on your browser to play another game.";
 				    output.appendChild(outRow);
+					output.scrollTop = output.scrollHeight;
                     /*alert("You win! Press the Refresh button on\n" +
                         "your browser to play another game.");*/
                     playflag = false;
