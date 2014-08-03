@@ -62,8 +62,9 @@ function setStatus() {
 
 /* Start the game! */
 (function () {
-    require(['constants', 'render', 'interactions', 'ai'], function () {
+    require(['constants', 'render', 'interactions', 'ai', 'sound'], function () {
         imagePreload();
+        //backgroundMusic.play(); // background music
 
         player = setupPlayer(false);
         computer = setupPlayer(true);

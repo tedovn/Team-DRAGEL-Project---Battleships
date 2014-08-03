@@ -82,7 +82,9 @@ function computerMove() {
     if (player[sy][sx][0] < 100) {
         /* Hit something */
         setupImages(sy, sx, 103, false);
+        hitSound.play();
         var shipno = player[sy][sx][1];
+
         if (--playersships[shipno][1] == 0) {
             sinkShip(player, shipno, false);
 			if(shiptypes[playersships[shipno][0]][0] === "Battleship") {
@@ -123,8 +125,10 @@ function computerMove() {
 				}
 			}	
 			outRow.innerHTML = "Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!";
+            bombSound.play();
 			output.appendChild(outRow);
 			output.scrollTop = output.scrollHeight;
+
             /*alert("Computer sank your " + shiptypes[playersships[shipno][0]][0] + "!");*/
             if (--playerlives == 0) {
                 knowYourEnemy();
@@ -139,6 +143,7 @@ function computerMove() {
         }
     } else {
         /* Missed */
+        missSound.play();
         setupImages(sy, sx, 102, false);
     }
 }

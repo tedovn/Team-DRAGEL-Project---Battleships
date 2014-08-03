@@ -5,9 +5,12 @@ function gridClick(y, x) {
 	outRow.className = "cool";
 	var shipInfos = document.getElementsByClassName("compship");
 	var currentValue;
+	
     if (playflag) {
         if (computer[y][x][0] < 100) {
             setupImages(y, x, 103, true);
+           	hitSound.play();
+
             var shipno = computer[y][x][1];
 
             if (--computersships[shipno][1] == 0) {
@@ -50,6 +53,8 @@ function gridClick(y, x) {
 					}
 				}				
 				outRow.innerHTML = "You sank computer's " + shiptypes[computersships[shipno][0]][0] + "!";
+				bombSound.play();
+
 				output.appendChild(outRow);
 				output.scrollTop = output.scrollHeight;
                 /*alert("You sank computer's " + shiptypes[computersships[shipno][0]][0] + "!");*/
@@ -67,11 +72,12 @@ function gridClick(y, x) {
             }
 
             if (playflag) {
-                computerMove();
+            	setTimeout(function() { computerMove() }, 1800);
             }
         } else if (computer[y][x][0] == 100) {
             setupImages(y, x, 102, true);
-            computerMove();
+            missSound.play();
+            setTimeout(function() { computerMove() }, 1800);
         }
     }
 }
